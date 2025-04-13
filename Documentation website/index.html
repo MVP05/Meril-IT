@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meril Internal Documentation</title>
+  <link rel="stylesheet" href="styless.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="assests/meril-logo.png" alt="Meril Logo" />
+    </div>
+    <h1>Meril Life Science Private Limited</h1>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Official Internal Use Documentations</h2>
+    </section>
+
+    <section class="modules">
+      <div class="module-card" onclick="location.href='zoho-expense.html';">ZOHO EXPENSE</div>
+      <div class="module-card" onclick="location.href='zoho-crm.html';">ZOHO CRM</div>
+      <div class="module-card" onclick="location.href='route-iq.html';">ROUTE IQ</div>
+      <div class="module-card" onclick="location.href='ibdsfa.html';">IBDSFA</div>
+      <div class="module-card" onclick="location.href='mats-int.html';">MATS INT</div>
+      <div class="module-card" onclick="location.href='mats.html';">MATS</div>
+    </section>
+
+    
+      
+  </main>
+
+  <footer>
+    <p>Copyright © 2025 Meril Life Sciences Pvt. Ltd. | Internal Use Only</p>
+  </footer>
+
+  <script>
+    document.getElementById('zoho-expense-toggle').addEventListener('click', function () {
+      const section = document.getElementById('zoho-expense-section');
+      section.style.display = section.style.display === 'none' ? 'grid' : 'none';
+      section.scrollIntoView({ behavior: 'smooth' });
+    });
+  </script>
+  
+</body>
+</html>
+

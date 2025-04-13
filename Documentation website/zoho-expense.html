@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zoho Expense - Internal Documentation</title>
+  <link rel="stylesheet" href="zoho-expense.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="assests/meril-logo.png" alt="Meril Logo" />
+    </div>
+    <h1>ZOHO EXPENSE Workflow & Functional Documentation 
+    </h1>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <ul>
+        <li data-section="doc-intro">Brief Overview</li>
+        <li data-section="doc-mdpl">MDPL</li>
+        <li data-section="doc-mepl">MEPL</li>
+        <li data-section="doc-mhpl">MHPL</li>
+        <li data-section="doc-mlspl">MLSPL</li>
+        <li data-section="doc-mlipl">MLIPL</li>
+        <li class="micro-toggle">MICRO ▸
+          <ul class="micro-submenu">
+            <li data-section="doc-endo">ENDO</li>
+            <li data-section="doc-lspl">LSPL</li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
+
+    <main class="doc-content">
+      <!-- Introduction Section -->
+      <section id="doc-intro" class="doc-section">
+        <h3>📄 Introduction</h3>
+        <p>This document outlines the structure, roles, and functional usage of Zoho Expense for Meril Life Sciences Pvt. Ltd., supporting transparent, multi-tiered, and policy-compliant expense workflows.</p>
+        
+        <h4>🧬 About Meril</h4>
+        <p>Meril Life Sciences Pvt. Ltd. is a global medical device company committed to the design, development, and manufacturing of novel, clinically relevant, and state-of-the-art devices. Founded in 2006, Meril has subsidiaries such as:</p>
+        <ul>
+          <li>Meril Diagnostics Pvt. Ltd. (MDPL)</li>
+          <li>Meril Endo-Surgery Pvt. Ltd. (MEPL)</li>
+          <li>Meril Healthcare Pvt. Ltd. (MHPL)</li>
+          <li>Meril Life Sciences Pvt. Ltd. (MLSPL)</li>
+          <li>Meril Life Sciences India Pvt. Ltd. (MLSIPL)</li>
+          <li>Micro Life Sciences Pvt. Ltd.</li>
+        </ul>
+        
+        <h4>Objective of Document</h4>
+        <p>To provide a comprehensive understanding of:</p>
+        <ul>
+          <li>Customized workflows across each Meril company</li>
+          <li>Expense policies and approval hierarchy</li>
+          <li>Integration points with other systems</li>
+          <li>Audit compliance and user training</li>
+        </ul>
+
+        <h4>📊 Platform Overview</h4>
+        <p>Zoho Expense digitizes expense submission and approval processes. Features Include:</p>
+        <ul>
+          <li>Real-time capture of bills</li>
+          <li>Mobile-first entry</li>
+          <li>Seamless ERP sync</li>
+          <li>Department-wise routing</li>
+          <li>GST capture, approval flows</li>
+        </ul>
+
+        <h4>🔧 Modules & Functionalities</h4>
+        <ul>
+          <li>Expense Reports</li>
+          <li>Trip & Advance Management</li>
+          <li>Approval Workflows</li>
+          <li>GST Compliance</li>
+          <li>Receipt OCR</li>
+          <li>Card Auto-Matching</li>
+          <li>Notifications & Escalations</li>
+        </ul>
+
+        <h4>🧑‍💼 User Roles & Responsibilities</h4>
+        <table>
+          <tr>
+            <th>Role</th>
+            <th>Responsibility</th>
+          </tr>
+          <tr>
+            <td>Employee</td>
+            <td>Raise & submit expenses</td>
+          </tr>
+          <tr>
+            <td>Manager</td>
+            <td>Review and approve</td>
+          </tr>
+          <tr>
+            <td>Finance Team</td>
+            <td>Validate claims and cross-check</td>
+          </tr>
+          <tr>
+            <td>Compliance Team</td>
+            <td>Check policy violations</td>
+          </tr>
+          <tr>
+            <td>Admin</td>
+            <td>Configure rules, workflows, users</td>
+          </tr>
+        </table>
+
+        <h4>🏢 Company Overview</h4>
+        <table>
+          <tr>
+            <th>Company</th>
+            <th>Focus Area</th>
+            <th>Divisions</th>
+            <th>Key Zoho Features</th>
+          </tr>
+          <tr>
+            <td>MDPL</td>
+            <td>Diagnostics</td>
+            <td>Sales, Services</td>
+            <td>Expense capping, workflow routing</td>
+          </tr>
+          <tr>
+            <td>MEPL</td>
+            <td>Endo-surgery tools</td>
+            <td>P1 (Sutures), P2 (Non-sutures)</td>
+            <td>Auto-booking, trip-type mapping</td>
+          </tr>
+          <tr>
+            <td>MHPL</td>
+            <td>Joints & Trauma</td>
+            <td>Knee, Hip, Screws</td>
+            <td>48h SLA, vendor linking</td>
+          </tr>
+          <tr>
+            <td>MLSPL</td>
+            <td>Med-Tech HQ</td>
+            <td>Central</td>
+            <td>Zoho Books sync, manual overrides</td>
+          </tr>
+          <tr>
+            <td>MLSIPL</td>
+            <td>Cardiovascular & ENT</td>
+            <td>5 Divisions</td>
+            <td>OCR, currency conversion</td>
+          </tr>
+          <tr>
+            <td>Micro LSPL</td>
+            <td>Consumables</td>
+            <td>Single Division</td>
+            <td>No advances, mobile claims</td>
+          </tr>
+        </table>
+      
+        <h4>🧩 Workflow Architecture</h4>
+        <p>Stages:</p>
+        <ul>
+          <li>Employee Submission</li>
+          <li>Manager Approval</li>
+          <li>Finance Verification</li>
+          <li>Compliance Check</li>
+          <li>Reimbursement Process</li>
+        </ul>
+        <p>📌 Workflow Diagram: 👉 <a href="#">Click Here for Visual Workflow</a></p>
+
+        <h4>🔄 Process Flow</h4>
+        <ul>
+          <li>Bill Entry</li>
+          <li>Trip Mapping</li>
+          <li>Manager Approval</li>
+          <li>Finance Validation</li>
+          <li>Reimbursement</li>
+        </ul>
+
+        <h4>💻 Interface Screens</h4>
+        <ul>
+          <li>Dashboard</li>
+          <li>Receipt Upload</li>
+          <li>Manager Inbox</li>
+          <li>Trip View</li>
+          <li>Notification Log</li>
+        </ul>
+
+        <h4>🛡 Policy & Compliance</h4>
+        <ul>
+          <li>Rule Engines for Each Entity</li>
+          <li>Budget Checks</li>
+          <li>Audit Logs</li>
+          <li>Violation Alerts</li>
+        </ul>
+
+        <h4>📈 Reporting & Dashboards</h4>
+        <ul>
+          <li>Department-Wise Expense Charts</li>
+          <li>Policy Violation Logs</li>
+          <li>Monthly vs Budget Spend</li>
+          <li>Drill-down by Entity</li>
+        </ul>
+
+        <h4>🔐 Security</h4>
+        <ul>
+          <li>2FA</li>
+          <li>Role-based Access</li>
+          <li>ISO 27001 Certified Hosting</li>
+          <li>Encryption Standard</li>
+        </ul>
+
+        <h4>💡 Benefits & ROI</h4>
+        <ul>
+          <li>50% Faster Reimbursements</li>
+          <li>2x Audit Efficiency</li>
+          <li>Lower Policy Violations</li>
+          <li>Cost Center Accuracy Improved</li>
+        </ul>
+
+        <h4>📚 Appendix</h4>
+        <ul>
+          <li>🔗 Zoho Expense Platform</li>
+          <li>🔗 Workflow Diagram</li>
+          <li>📌 Document Owner: Pratik Pawar</li>
+          <li>🛠 Integration Support: Internal IT</li>
+        </ul>
+      </section>
+
+      <section id="doc-mdpl" class="doc-section">
+        <section id="doc-mdpl">
+            <h4>🧪 Meril Diagnostics Private Limited (MDPL)</h4>
+            <p>At Meril Diagnostics, we embrace innovation and a customer-centric approach to deliver precise and clinically-researched diagnostic products across central labs, hospitals, and home testing.</p>
+        
+            <h5>Divisions:</h5>
+            <ul>
+              <li>Sales</li>
+              <li>Services</li>
+            </ul>
+        
+            <h5>Zoho Expense Highlights:</h5>
+            <ul>
+              <li>Entity-specific workflows for Sales & Service teams</li>
+              <li>Strict policy on travel reimbursements and per diem</li>
+              <li>Department-based budget limits</li>
+            </ul>
+            <p>📌 <a href="#">View Workflow</a></p>
+        
+            <h4>👥 Employee Mapping Table</h4>
+            <table>
+              <tr>
+                <th>Emp Code</th>
+                <th>Company</th>
+                <th>Client Code</th>
+                <th>SAP Code</th>
+              </tr>
+              <tr><td>5</td><td>MEPL</td><td>800</td><td>8000</td></tr>
+              <tr><td>4</td><td>MDPL</td><td>100</td><td>7000</td></tr>
+              <tr><td>21…23</td><td>MLSPL</td><td>200</td><td>2000</td></tr>
+              <tr><td>3</td><td>MLSIPL</td><td>300</td><td>3000</td></tr>
+              <tr><td>6</td><td>MHPL</td><td>900</td><td>9000</td></tr>
+              <tr><td>25/26</td><td>Micro LSPL</td><td>100</td><td>1012</td></tr>
+              <tr><td>8</td><td>MIMIPL</td><td>-</td><td>1022</td></tr>
+              <tr><td>15</td><td>MLIPL - CSR</td><td></td><td></td></tr>
+            </table>
+        
+            <h4>🧾 MDPL Structure</h4>
+            <pre class="tree">
+                MDPL
+                    ├── Trade
+                    │   ├── Sales
+                    │   │   1. Policy (i.e. Sales Policy)
+                    │   │   2. Division (i.e. Diagnostics)
+                    │   │   3. SAP Code
+                    │   │   4. Approval Matrix (Level 2/3)
+                    │   │   5. Zone Wise Approval
+                    │   │       └── (If designations in above ZSM then only Sumit Mahapushkar)
+                    │   │   6. Base Location (for Metro Allowance)
+                    │   └── Non Sales
+                    │       1. Policy (i.e. Non-Sales Policies)
+                    │       2. Division (i.e. Non-Sales MDPL)
+                    │       3. SAP Code
+                    │       4. Approval Matrix (Level 2/3)
+                    └── Tender
+                        1. Policy (i.e. Tender Policy)
+                        2. Division (i.e. Diagnostics Tender)
+                        3. SAP Code
+                        4. Approval Matrix (Level 2/3)
+                        5. Base Location (for Metro Allowance)
+            </pre>
+        
+            <h4>🌍 Zone-Wise Approver Mapping</h4>
+            <table>
+                <tr>
+                    <th>Zone</th>
+                    <th>Division</th>
+                    <th>Zone-wise Approver Name</th>
+                </tr>
+                <tr><td>North Zone</td><td>MDPL</td><td>Swati Vikas Padave</td></tr>
+                <tr><td>North-East Zone</td><td>MDPL</td><td>Swati Vikas Padave</td></tr>
+                <tr><td>South Zone</td><td>MDPL</td><td>Sumit Mahaphuskar</td></tr>
+                <tr><td>East Zone</td><td>MDPL</td><td>Swati Vikas Padave</td></tr>
+                <tr><td>West Zone</td><td>MDPL</td><td>Sumit Mahaphuskar</td></tr>
+            </table>
+            <h4>📊 MDPL Org Policy Chart</h4>
+                <div class="org-chart-scroll-wrapper">
+                <img src="assests/MDPL.drawio.svg" alt="MDPL Org Chart" class="org-chart-image" />
+                </div>
+         </section> 
+
+      </section> 
+     
+      
+
+      <section id="doc-mepl" class="doc-section">
+            <section id="doc-mepl">
+                <h4>🧵 Meril Endo-Surgery Private Limited (MEPL)
+                </h4>
+                <p>Meril Endosurgery provides a one-stop solution for surgeons with an extensive product portfolio: surgical sutures, tissue sealants, hemostats, hernia repair, IUDs, energy, and mechanical closure devices.
+                </p>
+            
+                <h5>Divisions:</h5>
+                <ul>
+                  <li>P1: Sutures</li>
+                  <li>P2: Non-Sutures</li>
+                </ul>
+            
+                <h5>Zoho Expense Highlights:</h5>
+                <ul>
+                  <li>Product-wise routing rules for travel and training
+                </li>
+                  <li>Auto-approval rules for frequent traveler categories
+                </li>
+                  <li>Real-time reimbursement tracking</li>
+                </ul>
+            
+            
+                <h4>👥 Employee Mapping Table</h4>
+                <table>
+                  <tr>
+                    <th>Emp Code</th>
+                    <th>Company</th>
+                    <th>Client Code</th>
+                    <th>SAP Code</th>
+                  </tr>
+                  <tr><td>5</td><td>MEPL</td><td>800</td><td>8000</td></tr>
+                  <tr><td>4</td><td>MDPL</td><td>100</td><td>7000</td></tr>
+                  <tr><td>21…23</td><td>MLSPL</td><td>200</td><td>2000</td></tr>
+                  <tr><td>3</td><td>MLSIPL</td><td>300</td><td>3000</td></tr>
+                  <tr><td>6</td><td>MHPL</td><td>900</td><td>9000</td></tr>
+                  <tr><td>25/26</td><td>Micro LSPL</td><td>100</td><td>1012</td></tr>
+                  <tr><td>8</td><td>MIMIPL</td><td>-</td><td>1022</td></tr>
+                  <tr><td>15</td><td>MLIPL - CSR</td><td></td><td></td></tr>
+                </table>
+            
+                <h4>🧾 MEPL Key Points Structure</h4>
+                <pre class="tree">
+                    MEPL
+                        ├── Trade
+                        │   ├── Sales
+                        │   │   1. Policy (i.e. Sales Policy)
+                        │   │   2. Division (i.e. Endo-Surgery)
+                        │   │   3. SAP Code
+                        │   │   4. Approval Matrix (Level 2/3)
+                        │   │   5. Zone Wise Approval
+                        │   │   6. Base Location (for Metro Allowance)
+                        │   └── Non Sales
+                        │       1. Policy (i.e. Non-Sales Policies)
+                        │       2. Division (i.e. Non-Sales MEPL)
+                        │       3. SAP Code
+                        │       4. Approval Matrix (Level 2/3)
+                        └── Tender
+                            1. Policy (i.e. Tender Policy)
+                            2. Division (i.e. Endo-Surgery Tender)
+                            3. SAP Code
+                            4. Approval Matrix (Level 2/3)
+                            5. Base Location (for Metro Allowance)
+                </pre>
+            
+                <h4>🌍 Zone-Wise Approver Mapping</h4>
+                <table>
+                    <tr>
+                        <th>Zone</th>
+                        <th>Division</th>
+                        <th>Zone-wise Approver Name</th>
+                    </tr>
+                    <tr><td>North Zone</td><td>MEPL</td><td>Harshal Rathod</td></tr>
+                    <tr><td>North-East Zone</td><td>MEPL</td><td>Darshana A. Sawant</td></tr>
+                    <tr><td>South Zone</td><td>MEPL</td><td>Darshana A. Sawant</td></tr>
+                    <tr><td>East Zone</td><td>MEPL</td><td>Darshana A. Sawant</td></tr>
+                    <tr><td>West Zone</td><td>MEPL</td><td>Harshal Rathod</td></tr>
+                    <tr><td>Central Zone</td><td>MEPL</td><td>Darshana A. Sawant</td></tr>
+                </table>
+                <h4>📊 MEPL Org Policy Chart</h4>
+                    <div class="org-chart-scroll-wrapper">
+                    <img src="assests/MEPL.drawio.svg" alt="MDPL Org Chart" class="org-chart-image" />
+                    </div>
+            </section>
+        </section>
+
+        <section id="doc-mhpl" class="doc-section">
+            <section id="doc-mhpl">
+                <h4>🏥 Meril Health Care Private Limited (MHPL)
+
+                </h4>
+                <p>MHPL adheres to world-class standards in the development, manufacturing, and distribution of healthcare devices, delivering transformative medical solutions globally.
+
+                </p>
+            
+                <h5>Divisions:</h5>
+                <ul>
+                  <li>Joints (Knee Replacement, Hip Replacement)</li>
+                  <li>Trauma (Screws, Bolts, etc.)</li>
+                </ul>
+            
+                <h5>Zoho Expense Highlights:</h5>
+                <ul>
+                  <li>Entity-specific expense categories for orthopedics and trauma
+
+                </li>
+                  <li>Linked with centralized vendor directory
+
+                </li>
+                  <li>Rapid claim turnaround via 48-hour SLA rules</li>
+                </ul>
+            
+                <h4>👥 Employee Mapping Table</h4>
+                <table>
+                  <tr>
+                    <th>Emp Code</th>
+                    <th>Company</th>
+                    <th>Client Code</th>
+                    <th>SAP Code</th>
+                  </tr>
+                  <tr><td>5</td><td>MEPL</td><td>800</td><td>8000</td></tr>
+                  <tr><td>4</td><td>MDPL</td><td>100</td><td>7000</td></tr>
+                  <tr><td>21…23</td><td>MLSPL</td><td>200</td><td>2000</td></tr>
+                  <tr><td>3</td><td>MLSIPL</td><td>300</td><td>3000</td></tr>
+                  <tr><td>6</td><td>MHPL</td><td>900</td><td>9000</td></tr>
+                  <tr><td>25/26</td><td>Micro LSPL</td><td>100</td><td>1012</td></tr>
+                  <tr><td>8</td><td>MIMIPL</td><td>-</td><td>1022</td></tr>
+                  <tr><td>15</td><td>MLIPL - CSR</td><td></td><td></td></tr>
+                </table>
+            
+                <h4>🧾 MHPL Key Points Structure</h4>
+                <pre class="tree">
+                    MHPL
+                        ├── Trade
+                        │   ├── Sales
+                        │   │   1. Policy (i.e. Sales Policy)
+                        │   │   2. Division (i.e. Joints/Trauma)
+                        │   │   3. SAP Code
+                        │   │   4. Approval Matrix (Level 2/3)
+                        │   │   5. Base Location (for Metro Allowance)
+                        │   └── Non Sales
+                        │       1. Policy (i.e. Non-Sales Policies)
+                        │       2. Division (i.e. Non-Sales MHPL)
+                        │       3. SAP Code
+                        │       4. Approval Matrix (Level 2/3)
+                        └── Tender
+                            1. Policy (i.e. Tender Policy)
+                            2. Division (i.e. orthopedics Tender)
+                            3. SAP Code
+                            4. Approval Matrix (Level 2/3)
+                            5. Base Location (for Metro Allowance)
+                </pre>
+
+                <h4>📊 MHPL Org Policy Chart</h4>
+                    <div class="org-chart-scroll-wrapper">
+                    <img src="assests/MHPL.drawio.svg" alt="MDPL Org Chart" class="org-chart-image" />
+                    </div>
+            </section>
+        </section>
+
+        <section id="doc-mlspl" class="doc-section">
+            <section id="doc-mlspl">
+                <h4> 🧬 Meril Life Sciences Private Limited (MLSPL)
+
+                </h4>
+                <p>At MLSPL, we drive patient-centric innovation with a wide range of accessible and efficient medical devices, focused on accelerating positive change in med-tech.</p>
+            
+                <h5>Zoho Expense Highlights:</h5>
+                <ul>
+                  <li>Centralized approvals for corporate executives
+
+
+                </li>
+                  <li>Manual processing for international travel claims
+
+
+                </li>
+                  <li>Tightly controlled advance settlement process</li>
+                </ul>
+              
+            
+                <h4>👥 Employee Mapping Table</h4>
+                <table>
+                  <tr>
+                    <th>Emp Code</th>
+                    <th>Company</th>
+                    <th>Client Code</th>
+                    <th>SAP Code</th>
+                  </tr>
+                  <tr><td>5</td><td>MEPL</td><td>800</td><td>8000</td></tr>
+                  <tr><td>4</td><td>MDPL</td><td>100</td><td>7000</td></tr>
+                  <tr><td>21…23</td><td>MLSPL</td><td>200</td><td>2000</td></tr>
+                  <tr><td>3</td><td>MLSIPL</td><td>300</td><td>3000</td></tr>
+                  <tr><td>6</td><td>MHPL</td><td>900</td><td>9000</td></tr>
+                  <tr><td>25/26</td><td>Micro LSPL</td><td>100</td><td>1012</td></tr>
+                  <tr><td>8</td><td>MIMIPL</td><td>-</td><td>1022</td></tr>
+                  <tr><td>15</td><td>MLIPL - CSR</td><td></td><td></td></tr>
+                </table>
+            
+                <h4>🧾 MLSPL Key Points Structure</h4>
+                <pre class="tree">
+                    MLSPL
+                        ├── Trade
+                          ├
+                          │  
+                          └── Non Sales
+                              1. Policy (i.e. Non-Sales Policies)
+                              2. Division (i.e. Non-Sales MLSPL)
+                              3. SAP Code
+                              4. Approval Matrix (Level 2/3)
+                        
+                </pre>
+
+                <h4>📊 MLSPL Org Policy Chart</h4>
+                    <div class="org-chart-scroll-wrapper">
+                    <img src="assests/MLSPL.drawio.svg" alt="MDPL Org Chart" class="org-chart-image" />
+                    </div>
+            </section>
+        </section>
+
+        <section id="doc-mlipl" class="doc-section">
+            <section id="doc-mlipl">
+                <h4>🇮🇳 Meril Life Sciences India Private Limited (MLSIPL) </h4>
+                <p>MLSIPL manufactures and develops diverse medical devices, including cardiology, laparoscopy, orthopedics, surgery, and vascular interventions.
+                </p>
+            
+                <h5>Divisions:</h5>
+                <ul>
+                  <li>Pure Cardio
+                </li>
+                  <li>ENT
+                </li>
+                <li>Peripherals
+                </li>
+                <li>Strategic Sales
+                </li>
+                <li>Cardiac Surgery</li>
+                </ul>
+            
+                <h5>Zoho Expense Highlights:</h5>
+                <ul>
+                  <li>Department-specific policy enforcement (e.g., Pure Cardio vs ENT)
+
+
+                </li>
+                  <li>Currency conversion automation for field teams
+
+
+                </li>
+                  <li>Pre-approved vendor mapping by medical division</li>
+                </ul>
+            
+                <h4>👥 Employee Mapping Table</h4>
+                <table>
+                  <tr>
+                    <th>Emp Code</th>
+                    <th>Company</th>
+                    <th>Client Code</th>
+                    <th>SAP Code</th>
+                  </tr>
+                  <tr><td>5</td><td>MEPL</td><td>800</td><td>8000</td></tr>
+                  <tr><td>4</td><td>MDPL</td><td>100</td><td>7000</td></tr>
+                  <tr><td>21…23</td><td>MLSPL</td><td>200</td><td>2000</td></tr>
+                  <tr><td>3</td><td>MLSIPL</td><td>300</td><td>3000</td></tr>
+                  <tr><td>6</td><td>MHPL</td><td>900</td><td>9000</td></tr>
+                  <tr><td>25/26</td><td>Micro LSPL</td><td>100</td><td>1012</td></tr>
+                  <tr><td>8</td><td>MIMIPL</td><td>-</td><td>1022</td></tr>
+                  <tr><td>15</td><td>MLIPL - CSR</td><td></td><td></td></tr>
+                </table>
+            
+                <h4>🧾 MLIPL Key Points Structure</h4>
+                <pre class="tree">
+                    MLIPL
+                        ├── Trade
+                        │   ├── Sales
+                        │   │   1. Policy (i.e. Sales Policy)
+                        │   │   2. Division (i.e. Cardio)
+                        │   │   3. SAP Code
+                        │   │   4. Approval Matrix (Level 2/3)
+                        │   └── Non Sales
+                        │       1. Policy (i.e. Non-Sales Policies)
+                        │       2. Division (i.e. Non-Sales MLIPL)
+                        │       3. SAP Code
+                        │       4. Approval Matrix (Level 2/3)
+                        └── Tender
+                            1. Policy (i.e. Tender Policy)
+                            2. Division (i.e. Cardiovascular Tender)
+                            3. SAP Code
+                            4. Approval Matrix (Level 2/3)
+                            5. Base Location (for Metro Allowance)
+                </pre>
+
+                <h4>📊 MLIPL Org Policy Chart</h4>
+                    <div class="org-chart-scroll-wrapper">
+                    <img src="assests/MLIPL.drawio.svg" alt="MDPL Org Chart" class="org-chart-image" />
+                    </div>
+            </section>
+        </section>
+
+        <section id="doc-endo" class="doc-section">
+            <section id="doc-endo">
+                <h4>🧾 Micro Life Sciences Private Limited (Micro ENDO)
+                </h4>
+                <p>Micro LSPL, established on May 31, 2006, operates in a specialized segment of the business and is not publicly listed.
+
+                </p>
+
+                <h5>Divisions:</h5>
+                <ul>
+                  <li>Endo P1
+                </li>
+                  <li>Endo P2
+                </li>
+            
+            
+                <h5>Zoho Expense Highlights:</h5>
+                <ul>
+                  <li>No advance reimbursements allowed
+
+
+
+                </li>
+                  <li>Weekly mandatory finance checks
+
+
+                </li>
+                  <li>Mobile app-based claim capture for field force</li>
+                </ul>
+               
+                <h4>👥 Employee Mapping Table</h4>
+                <table>
+                  <tr>
+                    <th>Emp Code</th>
+                    <th>Company</th>
+                    <th>Client Code</th>
+                    <th>SAP Code</th>
+                  </tr>
+                  <tr><td>5</td><td>MEPL</td><td>800</td><td>8000</td></tr>
+                  <tr><td>4</td><td>MDPL</td><td>100</td><td>7000</td></tr>
+                  <tr><td>21…23</td><td>MLSPL</td><td>200</td><td>2000</td></tr>
+                  <tr><td>3</td><td>MLSIPL</td><td>300</td><td>3000</td></tr>
+                  <tr><td>6</td><td>MHPL</td><td>900</td><td>9000</td></tr>
+                  <tr><td>25/26</td><td>Micro LSPL</td><td>100</td><td>1012</td></tr>
+                  <tr><td>8</td><td>MIMIPL</td><td>-</td><td>1022</td></tr>
+                  <tr><td>15</td><td>MLIPL - CSR</td><td></td><td></td></tr>
+                </table>
+            
+                <h4>🧾 MICRO ENDO Key Points Structure</h4>
+                <pre class="tree">
+                    ENDO
+                        ├── Trade
+                        │   ├── Sales
+                        │   │   1. Policy (i.e. Sales Policy)
+                        │   │   2. Division (i.e. EndoP1/P2)
+                        │   │   3. SAP Code
+                        │   │   4. Approval Matrix (Level 2/3)
+                        |   |   5.Base Location (for Metro Allowance)
+                        │   └── Non Sales
+                        │       1. Policy (i.e. Non-Sales Policies)
+                        │       2. Division (i.e. Non-Sales MICRO ENDO)
+                        │       3. SAP Code
+                        │       4. Approval Matrix (Level 2/3)
+                        └── Tender
+                            1. Policy (i.e. Tender Policy)
+                            2. Division 
+                            3. SAP Code
+                            4. Approval Matrix (Level 2/3)
+                            5. Base Location (for Metro Allowance)
+                </pre>
+
+                <h4>📊 Micro Endo Org Policy Chart</h4>
+                    <div class="org-chart-scroll-wrapper">
+                    <img src="assests/ENDO.drawio.svg" alt="MDPL Org Chart" class="org-chart-image" />
+                    </div>
+            </section>
+        </section>
+
+        <section id="doc-lspl" class="doc-section">
+            <section id="doc-lspl">
+                <h4>🧾 Micro Life Sciences Private Limited (Micro LSPL)
+                </h4>
+                <p>Micro LSPL, established on May 31, 2006, operates in a specialized segment of the business and is not publicly listed.
+
+                </p>
+
+            
+            
+                <h5>Zoho Expense Highlights:</h5>
+                <ul>
+                  <li>No advance reimbursements allowed
+
+
+
+                </li>
+                  <li>Weekly mandatory finance checks
+
+
+                </li>
+                  <li>Mobile app-based claim capture for field force</li>
+                </ul>
+                
+            
+                <h4>👥 Employee Mapping Table</h4>
+                <table>
+                  <tr>
+                    <th>Emp Code</th>
+                    <th>Company</th>
+                    <th>Client Code</th>
+                    <th>SAP Code</th>
+                  </tr>
+                  <tr><td>5</td><td>MEPL</td><td>800</td><td>8000</td></tr>
+                  <tr><td>4</td><td>MDPL</td><td>100</td><td>7000</td></tr>
+                  <tr><td>21…23</td><td>MLSPL</td><td>200</td><td>2000</td></tr>
+                  <tr><td>3</td><td>MLSIPL</td><td>300</td><td>3000</td></tr>
+                  <tr><td>6</td><td>MHPL</td><td>900</td><td>9000</td></tr>
+                  <tr><td>25/26</td><td>Micro LSPL</td><td>100</td><td>1012</td></tr>
+                  <tr><td>8</td><td>MIMIPL</td><td>-</td><td>1022</td></tr>
+                  <tr><td>15</td><td>MLIPL - CSR</td><td></td><td></td></tr>
+                </table>
+            
+                <h4>🧾 MICRO LSPL Key Points Structure</h4>
+                <pre class="tree">
+                    LSPL
+                        ├── Trade
+                        │   ├── Sales
+                        │   │   1. Policy (i.e. Sales Policy)
+                        │   │   2. Division
+                        │   │   3. SAP Code
+                        │   │   4. Approval Matrix (Level 2/3)
+                        |   |   5.Base Location (for Metro Allowance)
+                        │   └── Non Sales
+                        │       1. Policy (i.e. Non-Sales Policies)
+                        │       2. Division (i.e. Non-Sales MICRO LSPL)
+                        │       3. SAP Code
+                        │       4. Approval Matrix (Level 2/3)
+                        └── Tender
+                            1. Policy (i.e. Tender Policy)
+                            2. Division 
+                            3. SAP Code
+                            4. Approval Matrix (Level 2/3)
+                            5. Base Location (for Metro Allowance)
+                </pre>
+
+                <h4>📊 Micro LSPL Org Policy Chart</h4>
+                    <div class="org-chart-scroll-wrapper">
+                    <img src="assests/LSPL.drawio.svg" alt="MDPL Org Chart" class="org-chart-image" />
+                    </div>
+            </section>
+        </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>Copyright © 2025 Meril Life Sciences Pvt. Ltd. | Internal Use Only</p>
+  </footer>
+
+  <script src="zoho-expense.js"></script>
+</body>
+</html>
+
+

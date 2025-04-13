@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e0f7fa; /* Sky blue background */
+  color: #333;
+}
+
+header {
+  background: #0288d1; /* Sky blue color */
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  gap: 30rem;
+}
+
+header .logo img {
+  height: 100px;
+}
+
+header h1 {
+  font-size: 2.0rem;
+  margin: 0;
+}
+
+.intro {
+  text-align: center;
+  background: hite; /* Light lemon yellow background */
+  padding: 0rem 0rem;
+  color: rgba(10, 10, 172, 0.912); /* Sky blue text */
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.modules {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3x3 grid */
+  gap: 5.5rem;
+  padding: 6rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.module-card {
+  background: white;
+  padding: 8rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #0288d1; /* Sky blue text */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.module-card:hover {
+  background: #f3f6ba; /* Lighter sky blue */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  text-align: center;
+  background: #0288d1; /* Sky blue color */
+  color: white;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
